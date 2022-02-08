@@ -47,6 +47,7 @@ namespace JMClicker
             this.BTNStart.TabIndex = 1;
             this.BTNStart.Text = "Start";
             this.BTNStart.UseVisualStyleBackColor = true;
+            this.BTNStart.Click += new System.EventHandler(this.BTNStart_Click_1);
             // 
             // label1
             // 
@@ -117,7 +118,8 @@ namespace JMClicker
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "JM Auto Clicker v0.1.0 - alpha";
+            this.Text = "JM Clicker";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUMIntervalo)).EndInit();
             this.ResumeLayout(false);

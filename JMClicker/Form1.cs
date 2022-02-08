@@ -134,7 +134,7 @@ namespace JMClicker
             AC.Abort();
             Console.WriteLine("Abortado");
 
-            Hotkey = TXTInput.Text;
+            Intervalo = Convert.ToInt32(NUMIntervalo.Value);
 
             AC = new Thread(AutoClick);
             AC.Start();

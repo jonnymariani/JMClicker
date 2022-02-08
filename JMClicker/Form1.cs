@@ -128,6 +128,25 @@ namespace JMClicker
 
             }
         }
+
+        private void NUMIntervalo_ValueChanged(object sender, EventArgs e)
+        {
+            AC.Abort();
+            Console.WriteLine("Abortado");
+
+            Hotkey = TXTInput.Text;
+
+            AC = new Thread(AutoClick);
+            AC.Start();
+            Console.WriteLine("Iniciado");
+        }
+
+        private void NUMIntervalo_Click(object sender, EventArgs e)
+        {
+            NUMIntervalo.Focus();
+            NUMIntervalo.Select(0, NUMIntervalo.Value.ToString().Length);
+
+        }
     }
    
 }

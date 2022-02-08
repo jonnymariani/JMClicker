@@ -103,6 +103,8 @@ namespace JMClicker
             0,
             0,
             0});
+            this.NUMIntervalo.ValueChanged += new System.EventHandler(this.NUMIntervalo_ValueChanged);
+            this.NUMIntervalo.Click += new System.EventHandler(this.NUMIntervalo_Click);
             // 
             // Form1
             // 

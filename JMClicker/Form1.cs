@@ -147,6 +147,43 @@ namespace JMClicker
             NUMIntervalo.Select(0, NUMIntervalo.Value.ToString().Length);
 
         }
+
+        int AguardandoInput = 0; // 1 = entrou no foco 2 = aguardando input
+        String UltimoKey = "M";
+
+        private void TXTInput_Click(object sender, EventArgs e)
+        {
+            AguardandoInput++;
+        }
+
+        private void TXTInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            Hotkey = e.KeyCode + "";
+            BTNStart.Focus();
+
+            TXTInput.Text = "";
+            TXTInput.Text = Hotkey;
+
+            UltimoKey = TXTInput.Text;
+
+            AguardandoInput = 0;
+        }
+
+        private void TXTInput_Enter(object sender, EventArgs e)
+        {
+            TXTInput.ForeColor = Color.Red;
+            TXTInput.Text = "Press a Key";
+        }
+
+        private void TXTInput_Leave(object sender, EventArgs e)
+        {
+            TXTInput.ForeColor = Color.Black;
+
+            if (TXTInput.Text == "Press a Key")
+            {
+                TXTInput.Text = UltimoKey;
+            }
+        }
     }
    
 }

@@ -84,6 +84,10 @@ namespace JMClicker
             this.TXTInput.TabIndex = 3;
             this.TXTInput.Text = "M";
             this.TXTInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TXTInput.Click += new System.EventHandler(this.TXTInput_Click);
+            this.TXTInput.Enter += new System.EventHandler(this.TXTInput_Enter);
+            this.TXTInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTInput_KeyDown);
+            this.TXTInput.Leave += new System.EventHandler(this.TXTInput_Leave);
             // 
             // NUMIntervalo
             // 

@@ -1,4 +1,5 @@
-﻿namespace JMClicker
+﻿
+namespace JMClicker
 {
     partial class Form1
     {
@@ -28,13 +29,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.BTNStart = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BGW_BackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TXTInput = new System.Windows.Forms.TextBox();
+            this.NUMIntervalo = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.NUMIntervalo)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // BTNStart
+            // 
+            this.BTNStart.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNStart.Location = new System.Drawing.Point(39, 88);
+            this.BTNStart.Name = "BTNStart";
+            this.BTNStart.Size = new System.Drawing.Size(230, 60);
+            this.BTNStart.TabIndex = 1;
+            this.BTNStart.Text = "Start";
+            this.BTNStart.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 10F);
+            this.label1.Location = new System.Drawing.Point(39, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Interval (ms)";
+            // 
+            // BGW_BackgroundWorker
+            // 
+            this.BGW_BackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BGW_BackgroundWorker_DoWork);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 10F);
+            this.label2.Location = new System.Drawing.Point(165, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 19);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Input";
+            // 
+            // TXTInput
+            // 
+            this.TXTInput.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TXTInput.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 14.25F);
+            this.TXTInput.Location = new System.Drawing.Point(169, 48);
+            this.TXTInput.Name = "TXTInput";
+            this.TXTInput.ReadOnly = true;
+            this.TXTInput.Size = new System.Drawing.Size(100, 33);
+            this.TXTInput.TabIndex = 3;
+            this.TXTInput.Text = "M";
+            this.TXTInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // NUMIntervalo
+            // 
+            this.NUMIntervalo.Font = new System.Drawing.Font("Yu Gothic UI Semilight", 14.25F);
+            this.NUMIntervalo.Location = new System.Drawing.Point(39, 49);
+            this.NUMIntervalo.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.NUMIntervalo.Name = "NUMIntervalo";
+            this.NUMIntervalo.Size = new System.Drawing.Size(120, 33);
+            this.NUMIntervalo.TabIndex = 2;
+            this.NUMIntervalo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NUMIntervalo.Value = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(309, 174);
+            this.Controls.Add(this.NUMIntervalo);
+            this.Controls.Add(this.TXTInput);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BTNStart);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.Text = "JM Auto Clicker v0.1.0 - alpha";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.NUMIntervalo)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button BTNStart;
+        private System.Windows.Forms.Label label1;
+        private System.ComponentModel.BackgroundWorker BGW_BackgroundWorker;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TXTInput;
+        private System.Windows.Forms.NumericUpDown NUMIntervalo;
     }
 }
 

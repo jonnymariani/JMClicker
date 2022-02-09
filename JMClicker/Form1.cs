@@ -20,9 +20,19 @@ namespace JMClicker
         // Importa DLL's
         [DllImport("user32.dll")]
         static extern short GetAsyncKeyState(Keys vKey);
-        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
+
+        // Move form
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
 
         private const int LeftUp = 0x0004; 
         private const int LeftDown = 0x0002;
@@ -212,6 +222,13 @@ namespace JMClicker
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             BTNStart.Focus();
+
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+
         }
 
         private void TXTInput_TextChanged(object sender, EventArgs e)

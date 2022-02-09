@@ -29,14 +29,15 @@ namespace JMClicker
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.BTNStart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BGW_BackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.label2 = new System.Windows.Forms.Label();
             this.TXTInput = new System.Windows.Forms.TextBox();
-            this.NUMIntervalo = new JMClicker.CleanNumericUpDown();
             this.BTNCloseForm = new System.Windows.Forms.Button();
             this.BTNMinimizeForm = new System.Windows.Forms.Button();
+            this.NUMIntervalo = new JMClicker.CleanNumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.NUMIntervalo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,9 +100,42 @@ namespace JMClicker
             this.TXTInput.Text = "M";
             this.TXTInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TXTInput.Click += new System.EventHandler(this.TXTInput_Click);
+            this.TXTInput.TextChanged += new System.EventHandler(this.TXTInput_TextChanged);
             this.TXTInput.Enter += new System.EventHandler(this.TXTInput_Enter);
             this.TXTInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXTInput_KeyDown);
             this.TXTInput.Leave += new System.EventHandler(this.TXTInput_Leave);
+            // 
+            // BTNCloseForm
+            // 
+            this.BTNCloseForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.BTNCloseForm.FlatAppearance.BorderSize = 0;
+            this.BTNCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.BTNCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNCloseForm.Font = new System.Drawing.Font("Miriam Libre", 10F, System.Drawing.FontStyle.Italic);
+            this.BTNCloseForm.ForeColor = System.Drawing.SystemColors.Window;
+            this.BTNCloseForm.Location = new System.Drawing.Point(301, 12);
+            this.BTNCloseForm.Name = "BTNCloseForm";
+            this.BTNCloseForm.Size = new System.Drawing.Size(30, 30);
+            this.BTNCloseForm.TabIndex = 4;
+            this.BTNCloseForm.Text = "x";
+            this.BTNCloseForm.UseVisualStyleBackColor = false;
+            this.BTNCloseForm.Click += new System.EventHandler(this.BTNCloseForm_Click);
+            // 
+            // BTNMinimizeForm
+            // 
+            this.BTNMinimizeForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.BTNMinimizeForm.FlatAppearance.BorderSize = 0;
+            this.BTNMinimizeForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.BTNMinimizeForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNMinimizeForm.Font = new System.Drawing.Font("Miriam Libre", 10F, System.Drawing.FontStyle.Italic);
+            this.BTNMinimizeForm.ForeColor = System.Drawing.SystemColors.Window;
+            this.BTNMinimizeForm.Location = new System.Drawing.Point(265, 12);
+            this.BTNMinimizeForm.Name = "BTNMinimizeForm";
+            this.BTNMinimizeForm.Size = new System.Drawing.Size(30, 30);
+            this.BTNMinimizeForm.TabIndex = 5;
+            this.BTNMinimizeForm.Text = "-";
+            this.BTNMinimizeForm.UseVisualStyleBackColor = false;
+            this.BTNMinimizeForm.Click += new System.EventHandler(this.BTNMinimizeForm_Click);
             // 
             // NUMIntervalo
             // 
@@ -138,38 +172,6 @@ namespace JMClicker
             this.NUMIntervalo.Click += new System.EventHandler(this.NUMIntervalo_Click);
             this.NUMIntervalo.Resize += new System.EventHandler(this.NUMIntervalo_Resize);
             // 
-            // BTNCloseForm
-            // 
-            this.BTNCloseForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.BTNCloseForm.FlatAppearance.BorderSize = 0;
-            this.BTNCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.BTNCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNCloseForm.Font = new System.Drawing.Font("Miriam Libre", 10F, System.Drawing.FontStyle.Italic);
-            this.BTNCloseForm.ForeColor = System.Drawing.SystemColors.Window;
-            this.BTNCloseForm.Location = new System.Drawing.Point(301, 12);
-            this.BTNCloseForm.Name = "BTNCloseForm";
-            this.BTNCloseForm.Size = new System.Drawing.Size(30, 30);
-            this.BTNCloseForm.TabIndex = 4;
-            this.BTNCloseForm.Text = "x";
-            this.BTNCloseForm.UseVisualStyleBackColor = false;
-            this.BTNCloseForm.Click += new System.EventHandler(this.BTNCloseForm_Click);
-            // 
-            // BTNMinimizeForm
-            // 
-            this.BTNMinimizeForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.BTNMinimizeForm.FlatAppearance.BorderSize = 0;
-            this.BTNMinimizeForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.BTNMinimizeForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNMinimizeForm.Font = new System.Drawing.Font("Miriam Libre", 10F, System.Drawing.FontStyle.Italic);
-            this.BTNMinimizeForm.ForeColor = System.Drawing.SystemColors.Window;
-            this.BTNMinimizeForm.Location = new System.Drawing.Point(265, 12);
-            this.BTNMinimizeForm.Name = "BTNMinimizeForm";
-            this.BTNMinimizeForm.Size = new System.Drawing.Size(30, 30);
-            this.BTNMinimizeForm.TabIndex = 5;
-            this.BTNMinimizeForm.Text = "-";
-            this.BTNMinimizeForm.UseVisualStyleBackColor = false;
-            this.BTNMinimizeForm.Click += new System.EventHandler(this.BTNMinimizeForm_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,11 +187,13 @@ namespace JMClicker
             this.Controls.Add(this.BTNStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "JM Clicker";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.NUMIntervalo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

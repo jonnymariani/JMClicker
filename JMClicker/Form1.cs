@@ -36,21 +36,26 @@ namespace JMClicker
         // Cria thread responsável por clicar
         Thread AC;
 
-
         public Form1()
         {
             InitializeComponent();
         }
 
+        bool FormReady = false;
         private void Form1_Load(object sender, EventArgs e)
         {
-            CheckForIllegalCrossThreadCalls = false;
 
+            TXTInput.Text = Properties.Settings.Default.Hotkey;
+            NUMIntervalo.Value = Properties.Settings.Default.Intervalo;
+
+            CheckForIllegalCrossThreadCalls = false;
             Intervalo = Convert.ToInt32(NUMIntervalo.Value);
             Hotkey = TXTInput.Text;
 
             AC = new Thread(AutoClick);
             BGW_BackgroundWorker.RunWorkerAsync();
+
+            FormReady = true;
 
         }
 
@@ -131,14 +136,21 @@ namespace JMClicker
 
         private void NUMIntervalo_ValueChanged(object sender, EventArgs e)
         {
-            AC.Abort();
-            Console.WriteLine("Abortado");
+            if (FormReady)
+            {
+                AC.Abort();
+                Console.WriteLine("Abortado");
 
-            Intervalo = Convert.ToInt32(NUMIntervalo.Value);
+                Intervalo = Convert.ToInt32(NUMIntervalo.Value);
 
-            AC = new Thread(AutoClick);
-            AC.Start();
-            Console.WriteLine("Iniciado");
+                AC = new Thread(AutoClick);
+                AC.Start();
+                Console.WriteLine("Iniciado");
+
+                Properties.Settings.Default.Intervalo = NUMIntervalo.Value;
+                Properties.Settings.Default.Save();
+
+            }
         }
 
         private void NUMIntervalo_Click(object sender, EventArgs e)
@@ -149,7 +161,7 @@ namespace JMClicker
         }
 
         int AguardandoInput = 0; // 1 = entrou no foco 2 = aguardando input
-        String UltimoKey = "M";
+        String UltimoKey = Properties.Settings.Default.Hotkey;
 
         private void TXTInput_Click(object sender, EventArgs e)
         {
@@ -195,6 +207,17 @@ namespace JMClicker
         private void BTNCloseForm_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            BTNStart.Focus();
+        }
+
+        private void TXTInput_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Hotkey = TXTInput.Text;
+            Properties.Settings.Default.Save();
         }
     }
    

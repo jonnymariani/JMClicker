@@ -26,7 +26,7 @@
 
 <br>
 
-  #### Pronto! Quando você precisar clicar basta pressionar a tecla escolhida.
+  #### Pronto! Quando você quiser clicar basta manter pressionado a tecla escolhida.
 
 <br>
 

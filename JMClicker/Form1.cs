@@ -76,9 +76,9 @@ namespace JMClicker
             {
                 if (Clicar)
                 {
-                    mouse_event(dwFlags: LeftUp, dx: 0, dy: 0, cButtons: 0, dwExtraInfo: 0);
+                    mouse_event(dwFlags: LeftDown, dx: 0, dy: 0, cButtons: 0, dwExtraInfo: 0);                    
                     Thread.Sleep(5);
-                    mouse_event(dwFlags: LeftDown, dx: 0, dy: 0, cButtons: 0, dwExtraInfo: 0);
+                    mouse_event(dwFlags: LeftUp, dx: 0, dy: 0, cButtons: 0, dwExtraInfo: 0);
                     Thread.Sleep(Intervalo);
                 }
                 

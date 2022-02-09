@@ -171,18 +171,30 @@ namespace JMClicker
 
         private void TXTInput_Enter(object sender, EventArgs e)
         {
-            TXTInput.ForeColor = Color.Red;
-            TXTInput.Text = "Press a Key";
+            TXTInput.Text = "?";
         }
 
         private void TXTInput_Leave(object sender, EventArgs e)
         {
-            TXTInput.ForeColor = Color.Black;
-
-            if (TXTInput.Text == "Press a Key")
+            if (TXTInput.Text == "?")
             {
                 TXTInput.Text = UltimoKey;
             }
+        }
+
+        private void NUMIntervalo_Resize(object sender, EventArgs e)
+        {
+            NUMIntervalo.Controls[1].Width = NUMIntervalo.Controls[1].Width + 40;
+        }
+
+        private void BTNMinimizeForm_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BTNCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
    

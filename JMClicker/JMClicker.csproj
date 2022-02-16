@@ -11,5 +11,5 @@
   <ItemGroup>
     <Content Include="resources\ico.ico" />
   </ItemGroup>
-
+  
 </Project>

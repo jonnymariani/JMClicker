@@ -30,20 +30,10 @@
 
 <br>
 
-## 👁️‍🗨️ Compatibilidade
-<br>
-
-* Windows :heavy_check_mark:
-* Linux :x:
-* Mac :x:
-
-##
-<br>
-
 ## 💻 Pré-Requisitos
 <br>
 
-* <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472">.NET Framework 4.7.2 Runtime</a>
+* <a href="https://dotnet.microsoft.com/en-us/download">.NET Runtime</a>
 
 
 ##
